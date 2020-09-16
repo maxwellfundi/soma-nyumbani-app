@@ -1,13 +1,14 @@
 import { NgModule } from "@angular/core";
 
-import { SessionActivityComponent } from "./session-activity";
 import { CommonModule } from "@angular/common";
 import { IonicModule } from "@ionic/angular";
+import { AnalyticsConsentComponent } from "./analyticsConsent";
+import { RouterModule } from "@angular/router";
 
-const AppComponents = [SessionActivityComponent];
+const AppComponents = [AnalyticsConsentComponent];
 
 @NgModule({
-  imports: [CommonModule, IonicModule],
+  imports: [CommonModule, IonicModule, RouterModule],
   exports: AppComponents,
   declarations: AppComponents,
   providers: [],
