@@ -1,6 +1,6 @@
 {
   "name": "soma-nyumbani-app",
-  "version": "0.4.2",
+  "version": "1.0.2",
   "author": "IDEMS International",
   "homepage": "https://idems.international",
   "scripts": {
@@ -10,7 +10,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "app:build": "npm run build -- --prod && npx cap sync",
+    "app:build:staging": "ng build --configuration=\"production,staging\"",
+    "app:build:production": "ng build --configuration=production",
+    "app:sync": "npx cap sync",
     "postinstall": "ngcc && npx jetify",
     "version": "ts-node --project tsconfig.scripts.json scripts/version.ts",
     "scripts:populateDB": "ts-node --project tsconfig.scripts.json scripts/populateDB.ts"
@@ -30,13 +32,17 @@
     "@ionic-native/core": "^5.28.0",
     "@ionic-native/file-opener": "^5.28.0",
     "@ionic/angular": "^5.3.2",
+    "@sentry/angular": "^5.24.2",
+    "capacitor-firebase-auth": "^2.3.2",
     "cordova-plugin-androidx": "^2.0.0",
     "cordova-plugin-androidx-adapter": "^1.1.1",
     "cordova-plugin-file-opener2": "^3.0.4",
     "firebase": "^7.20.0",
+    "ng2-pdfjs-viewer": "^5.0.7",
     "pouchdb": "^7.2.2",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.1",
+    "uuid": "^8.3.0",
     "zone.js": "~0.11.1"
   },
   "devDependencies": {
@@ -54,6 +60,7 @@
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "^14.6.4",
     "@types/pouchdb": "^6.4.0",
+    "@types/uuid": "^8.3.0",
     "axios": "^0.20.0",
     "codelyzer": "^6.0.0",
     "firebase-tools": "^8.0.0",
